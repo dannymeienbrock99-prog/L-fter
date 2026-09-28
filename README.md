@@ -54,10 +54,11 @@ src/FanAtlas/bin/Release/net8.0-windows/FanAtlas.exe --render 'Profil.cueprofile
 
 ## Prüfung dieser Version
 
-Build ohne Warnungen; Parser-, CSV-, Kurven- und Layouttests; fünf gerenderte App-Ansichten; lokale HTTP-Verbindung inklusive fehlender/falscher Schlüssel, fremdem Ursprung, ungültigen Kurven und Dateipfaden geprüft. Stream-Deck-WebSocket-Protokoll mit simuliertem Host geprüft: Registrierung, Tastenbilder, Auswahllisten, Wertewechsel und Kurvenauswahl. Elgato-Validierung und Paketierung erfolgreich. Die physische Tastenbelegung wird vom Benutzer vorgenommen.
+Build ohne Warnungen; Parser-, CSV-, Kurven- und Layouttests; fünf gerenderte App-Ansichten; lokale HTTP-Verbindung inklusive fehlender/falscher Schlüssel, fremdem Ursprung, ungültigen Kurven und Dateipfaden geprüft. OBS-Ansicht im Browser visuell geprüft. Stream-Deck-WebSocket-Protokoll mit simuliertem Host geprüft: Registrierung, Tastenbilder, Auswahllisten, Wertewechsel, Kurvenauswahl und Offlinezustand. Elgato-Validierung und Paketierung erfolgreich. Installer in isoliertem Ordner installiert, App daraus gestartet und über den mitgelieferten Uninstaller erfolgreich entfernt. Die physische Tastenbelegung wird vom Benutzer vorgenommen.
 
 ## Bilder und Abhängigkeiten
 
 Die Bilder wurden vom Auftraggeber zur Integration bereitgestellt. Marken und Bilder gehören ihren jeweiligen Rechteinhabern; daraus wird keine allgemeine Bildlizenz abgeleitet. Das Beispielplugin „Windows Utils“ wurde nur zur Orientierung verwendet; sein Programmcode und seine Binärdateien sind nicht Bestandteil dieses Projekts. .NET wird unter seinen jeweiligen MIT-/Drittanbieterlizenzen mitgeliefert. Elgato Stream Deck und Corsair iCUE sind separate Produkte.
 
 Technische Referenzen: [Elgato Manifest](https://docs.elgato.com/streamdeck/sdk/references/manifest/), [Plugin-WebSocket](https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/), [Inno Setup](https://jrsoftware.org/isinfo.php).
+

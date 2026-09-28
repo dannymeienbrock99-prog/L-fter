@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "Crazy_Batto FanAtlas",
+  "UUID": "de.crazybatto.fanatlas",
+  "Author": "Crazy_Batto",
+  "Version": "0.2.0.0",
+  "Description": "Lüfterwerte und Temperaturen aus FanAtlas auf jeder Taste. Kurvenentwürfe per Taste öffnen.",
+  "Category": "Crazy_Batto FanAtlas",
+  "CategoryIcon": "images/category",
+  "Icon": "images/plugin",
+  "URL": "https://github.com/dannymeienbrock99-prog/L-fter",
+  "CodePath": "bin/FanAtlas.Deck.exe",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "6.5"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Actions": [
+    {
+      "UUID": "de.crazybatto.fanatlas.fan",
+      "Name": "Lüfter anzeigen",
+      "Tooltip": "Lüfterbild, Temperatur und Drehzahl. Tastendruck wechselt den großen Wert.",
+      "Icon": "images/action",
+      "PropertyInspectorPath": "ui/index.html",
+      "SupportedInMultiActions": false,
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "de.crazybatto.fanatlas.curve",
+      "Name": "Kurvenentwurf wählen",
+      "Tooltip": "Wählt einen Entwurf in FanAtlas. Für echte Lüftersteuerung die offizielle iCUE-Aktion verwenden.",
+      "Icon": "images/action",
+      "PropertyInspectorPath": "ui/index.html",
+      "SupportedInMultiActions": true,
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/key",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ]
+}

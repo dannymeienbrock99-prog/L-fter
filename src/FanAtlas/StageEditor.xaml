@@ -1,0 +1,33 @@
+<UserControl x:Class="FanAtlas.StageEditor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <Grid>
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <Grid Margin="0,0,0,16"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+   <StackPanel><TextBlock Text="Deine Lüfter. Deine Bühne." Style="{StaticResource Heading}"/><TextBlock Text="Lüfter ziehen · Temperatur in der Mitte · als Browserquelle in OBS verwenden" Style="{StaticResource Caption}"/></StackPanel>
+   <WrapPanel Grid.Column="1" VerticalAlignment="Center"><Button Content="OBS-Adresse kopieren" Style="{StaticResource Primary}" Click="CopyObs_Click"/><Button Content="Stream-Vorschau" Click="Preview_Click" Margin="0"/></WrapPanel>
+  </Grid>
+  <Grid Grid.Row="1"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="20"/><ColumnDefinition Width="305"/></Grid.ColumnDefinitions>
+   <Grid><Grid.RowDefinitions><RowDefinition/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+    <Border Background="#080C16" BorderBrush="#456380" BorderThickness="1" CornerRadius="8" ClipToBounds="True">
+     <Viewbox Stretch="Uniform"><Canvas x:Name="Scene" Width="1920" Height="1080" Background="#101B29" ClipToBounds="True"/></Viewbox>
+    </Border>
+    <Grid Grid.Row="1" Margin="0,12,0,0"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions><TextBlock x:Name="SceneSummary" Text="Warte auf Messwerte …" Style="{StaticResource Caption}"/><StackPanel Grid.Column="1" Orientation="Horizontal"><Button Content="Layout laden" Click="LoadLayout_Click"/><Button Content="Layout exportieren" Click="ExportLayout_Click" Margin="0"/></StackPanel></Grid>
+   </Grid>
+   <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto"><StackPanel>
+    <TextBlock Text="Hintergrund" FontWeight="SemiBold"/><ComboBox x:Name="BackgroundSelect" SelectionChanged="BackgroundSelect_SelectionChanged" Margin="0,8,0,18" DisplayMemberPath="Name"/>
+    <TextBlock Text="Lüfter auf der Bühne" FontWeight="SemiBold"/><ComboBox x:Name="TileSelect" SelectionChanged="TileSelect_SelectionChanged" Margin="0,8,0,14"/>
+    <TextBlock Text="Anzeigename" Style="{StaticResource Caption}"/><TextBox x:Name="NameInput" LostFocus="NameInput_LostFocus" Margin="0,5,0,13"/>
+    <TextBlock Text="Temperatur in der Mitte" Style="{StaticResource Caption}"/><ComboBox x:Name="TempSelect" DisplayMemberPath="Name" SelectionChanged="Mapping_SelectionChanged" Margin="0,5,0,13"/>
+    <TextBlock Text="Drehzahl / Lüfterwert" Style="{StaticResource Caption}"/><ComboBox x:Name="RpmSelect" DisplayMemberPath="Name" SelectionChanged="Mapping_SelectionChanged" Margin="0,5,0,13"/>
+    <TextBlock Text="Größe" Style="{StaticResource Caption}"/><Slider x:Name="SizeSlider" Minimum="120" Maximum="420" TickFrequency="10" IsSnapToTickEnabled="True" ValueChanged="SizeSlider_ValueChanged" Margin="0,8,0,12"/>
+    <CheckBox x:Name="VisibleToggle" Content="Im Stream anzeigen" Click="VisibleToggle_Click"/>
+    <Button Content="Aus Layout entfernen" Click="RemoveTile_Click" Margin="0,5,0,17"/>
+    <Button Content="Erkannte Lüfter wieder hinzufügen" Click="RestoreDetected_Click" Margin="0,0,0,17"/>
+    <TextBlock Text="Profilkanal als Platzhalter" FontWeight="SemiBold"/><TextBlock Text="Noch kein erkannter Live-Lüfter. Erst einen Messwert zuordnen." Style="{StaticResource Caption}" FontSize="11" Margin="0,5,0,8"/>
+    <ComboBox x:Name="ProfileSelect" DisplayMemberPath="Name" Margin="0,0,0,7"/><Button Content="Profilkanal hinzufügen" Click="AddProfile_Click" Margin="0,0,0,18"/>
+    <TextBlock Text="Stream Deck" FontWeight="SemiBold"/><TextBlock Text="Ein Lüfter pro Taste: Temperatur und Lüfterwert. Die Aktion „Kurve wählen“ öffnet einen Entwurf in FanAtlas. Echte Kühlungswechsel erfolgen über die offizielle iCUE-Aktion." Style="{StaticResource Caption}" FontSize="12" Margin="0,8,0,12"/><Button Content="Plugin-Paket öffnen" Click="Plugin_Click" Margin="0,0,0,12"/>
+   </StackPanel></ScrollViewer>
+  </Grid>
+  <Border Grid.Row="2" Background="#DB122439" CornerRadius="8" Padding="14,10" Margin="0,14,0,0"><TextBlock x:Name="BridgeStatus" Text="Stream startet …" Style="{StaticResource Caption}"/></Border>
+ </Grid>
+</UserControl>
+
